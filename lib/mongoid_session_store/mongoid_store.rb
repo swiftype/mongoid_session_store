@@ -8,8 +8,9 @@ module ActionDispatch
         store_in :collection => 'sessions'
 
         field :_id, :type => String
-
         field :data, :type => String, :default => [Marshal.dump({})].pack("m*")
+
+        attr_accessible :id
       end
 
       # The class used for session storage.
