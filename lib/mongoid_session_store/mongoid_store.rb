@@ -8,9 +8,10 @@ module ActionDispatch
         store_in :collection => 'sessions'
 
         field :_id, :type => String
+        field :created_at, :type => DateTime, :default => Time.now.utc
         field :data, :type => String, :default => [Marshal.dump({})].pack("m*")
 
-        attr_accessible :id
+        attr_accessible :id, :created_at
       end
 
       # The class used for session storage.
